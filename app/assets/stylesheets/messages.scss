@@ -1,0 +1,44 @@
+.messages_heading {
+  color: coral;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.messages_wrapper {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.messages_wrapper .mailto_user {
+  margin: 0;
+}
+
+.message_content {
+  color: #333;
+  background-color: #fffff0;
+  padding: 20px 30px;
+  text-decoration: none;
+  flex-wrap: wrap;
+  border: 1px solid #ccc;
+}
+
+.message_content .user_icon {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  margin-right: 20px;
+  float: left;
+}
+
+.user_name {
+  line-height: 40px;
+  text-align: left;
+}
+
+.content {
+  text-align: left;
+}
+
+.contact_time {
+  float: right;
+}

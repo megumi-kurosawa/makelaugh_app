@@ -1,0 +1,18 @@
+<div>
+  <div class="container">
+    <h1 class="posts_heading">投稿一覧</h1>
+    <div class="posts_wrapper">
+      <% @posts.each do |post| %>
+        <div class="post">
+          <a href="<% "/users/#{post.user.id}" %>"><img class="user_icon" src="<%= "/user_images/#{post.user.image_name}" %>"></a>
+          <div class="user_name">
+            <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+          </div>
+          <div class="post_content">
+            <%= link_to(post.content, "/posts/#{post.id}") %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

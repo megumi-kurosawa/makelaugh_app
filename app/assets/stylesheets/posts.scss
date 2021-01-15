@@ -1,0 +1,72 @@
+.posts_heading {
+  color: coral;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.post {
+  color: #333;
+  background-color: #fffff0;
+  padding: 20px 30px;
+  text-decoration: none;
+  border: 1px solid #ccc;
+}
+
+.post .user_icon {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  float: left;
+}
+
+.post .user_name {
+  font-weight: normal;
+  text-align: left;
+}
+
+.post_item {
+  height: 320px;
+  width: 520px;
+  background-color: #fffff0;
+  margin: 0 auto;
+}
+
+.post_user_icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  float: left;
+  margin: 10px;
+}
+
+.post_user_name {
+  padding: 10px 0;
+  font-size: 20px;
+}
+
+.post_content {
+  width: 90%;
+  height: 70%;
+  padding: 5px;
+  line-height: 32px;
+  margin: 0 auto;
+}
+
+.post_created_at {
+  float: left;
+  padding: 0 20px;
+}
+
+.post_delete {
+  float: right;
+  margin-right: 20px;
+}
+
+.form_wrapper {
+  text-align: center;
+}
+
+textarea {
+  height: 270px;
+  width: 80%;
+}

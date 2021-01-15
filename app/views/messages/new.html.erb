@@ -1,0 +1,12 @@
+<div>
+  <div class="container">
+    <h1 class="messages_heading"><%="#{@receive_user.name}"%>さんへのメッセージ作成</h1>
+      <%= form_tag("/messages/#{@receive_user.id}/create") do %>
+        <div class="form_wrapper">
+          <textarea name="content" rows="8" cols="80"></textarea>
+          <p></p>
+          <input type="submit" value="送信">
+        </div>
+      <% end %>
+  </div>
+</div>

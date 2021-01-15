@@ -1,0 +1,37 @@
+<div>
+  <div class="container">
+    <div class="messages_wrapper">
+    <% if(@messages.first.sended_user.id == @current_user.id) %>
+    <h1 class="messages_heading"><%= @messages.first.received_user.name %>さんとのメッセージ</h1>
+    <div class="mailto_user">
+      <%= link_to("/messages/#{@messages.first.received_user.id}/post") do %>
+        <span class="fas fa-envelope fa-3x mail_btn"></span>
+      <% end %>
+    </div>
+    <% else %>
+    <h1 class="messages_heading"><%= @messages.first.sended_user.name %>さんとのメッセージ</h1>
+    <div class="mailto_user">
+      <%= link_to("/messages/#{@messages.first.sended_user.id}/post") do %>
+        <span class="fas fa-envelope fa-3x mail_btn"></span>
+      <% end %>
+    </div>
+    <% end %>
+    <div class="messages_wrapper">
+      <% @messages.each do |message| %>
+        <div class="message_content">
+          <img class="user_icon" src="<%= "/user_images/#{message.sended_user.image_name}" %>">
+          <div class="user_name">
+            <%= link_to(message.sended_user.name, "/users/#{message.sended_user.id}") %>
+          </div>
+          <div class="content">
+            <p><%= message.content %></p>
+          </div>
+          <div class="contact_time">
+            <%= message.created_at %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    </div>
+  </div>
+</div>

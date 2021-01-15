@@ -1,0 +1,34 @@
+<div>
+  <div class="container">
+  <h1 class="users_heading">ユーザー詳細</h1>
+    <div class="user_details">
+      <img class="user_icon" src="<%= "/user_images/#{@user.image_name}" %>">
+      <h2><%= @user.name %></h2>
+      <% if @user.id == @current_user.id %>
+        <p><%= @user.email %></p>
+        <div class="user_edit">
+          <%= link_to("編集", "/users/#{@user.id}/edit") %>
+        </div>
+      <% else %>
+        <div class="mailto_user">
+          <%= link_to("/messages/#{@user.id}/post") do %>
+            <span class="fas fa-envelope fa-3x mail_btn"></span>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div class="post_contents">
+    <% @posts.each do |post| %>
+      <div class="post_content">
+        <img class="post_user_icon" src="<%= "/user_images/#{@user.image_name}" %>">
+        <div class="post_user_name">
+          <%= link_to(@user.name, "/users/#{@user.id}") %>
+        </div>
+        <div class="content">
+          <p><%= link_to(post.content, "/posts/#{post.id}") %></p>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>

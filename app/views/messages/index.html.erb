@@ -1,0 +1,27 @@
+<div>
+  <div class="container">
+    <h1 class="messages_heading">メッセージ一覧</h1>
+    <div class="messages_wrapper">
+      <% @contacts.each do |contact| %>
+        <div class="message_content">
+          <% if(contact.send_id == @current_user.id) %>
+          <% received_user = User.find_by(id: contact.receive_id) %>
+          <img class="user_icon" src="<%= "/user_images/#{received_user.image_name}" %>">
+          <div class="user_name">
+            <%= link_to(received_user.name, "/messages/#{received_user.id}") %>
+          </div>
+          <% else %>
+          <% sended_user = User.find_by(id: contact.send_id) %>
+          <img class="user_icon" src="<%= "/user_images/#{sended_user.image_name}" %>">
+          <div class="user_name">
+            <%= link_to(sended_user.name, "/messages/#{sended_user.id}") %>
+          </div>
+          <% end %>
+          <div class="contact_time">
+            <%= contact.updated_at %>            
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
